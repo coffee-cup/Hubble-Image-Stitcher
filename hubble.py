@@ -2,7 +2,6 @@ import urllib2
 import re
 import random
 import math
-import numpy
 from PIL import Image
 from cStringIO import StringIO
 
@@ -21,8 +20,8 @@ HUBBLE_STARS = "http://hubblesite.org/gallery/album/star/npp/all/"
 
 # Change to whichever category of images wanted
 HUBBLE_CAT_TO_LOAD = HUBBLE_ALL
-# The size each separate image will be
-IMG_SIZE = 50
+# The size (in pixels) each separate image will be
+IMG_SIZE = 100
 
 # Stores begg
 HUBBLE_URL_FRONT = "http://imgsrc.hubblesite.org/hu/db/images/hs-"
@@ -73,7 +72,7 @@ def main():
     coll = Image.new("RGB", (size * IMG_SIZE, size * IMG_SIZE))
 
     # List of indexs
-    index_list = list(numpy.arange(0, size * size))
+    index_list = list(range(0, size * size))
 
     index = 0
     for i in range(size):
