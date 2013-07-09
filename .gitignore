@@ -1,2 +1,10 @@
 
 .DS_Store
+
+
+bin/
+lib/
+hubbleimagestitcher/.Python
+*.jpeg
+
+hubbleimagestitcher/include/python2.7

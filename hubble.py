@@ -1,3 +1,5 @@
+#!hubbleimagestitcher/bin/env python
+
 import urllib2
 import re
 import random
@@ -18,13 +20,14 @@ HUBBLE_STARS = "http://hubblesite.org/gallery/album/star/npp/all/"
 
 # SETTINGS TO CHANGE
 
-# Change to whichever category of images wanted
-HUBBLE_CAT_TO_LOAD = HUBBLE_ALL
+# Change what url to open to change types of pictures (ex. "HUBBLE_ALL", "HUBBLE_STARS")
+HUBBLE_CAT_TO_LOAD = HUBBLE_NEBULA
 # The size (in pixels) each separate image will be
-IMG_SIZE = 100
+IMG_SIZE = 300
 
-# Stores begg
+# Stores beginning of url
 HUBBLE_URL_FRONT = "http://imgsrc.hubblesite.org/hu/db/images/hs-"
+# Image sizes
 SMALL_URL = "-small_web.jpg"
 MED_URL = "-web.jpg"
 LARG_URL = "-large_web.jpg"
@@ -33,7 +36,6 @@ XLARG_URL = "-xlarge_web.jpg"
 
 # Gets all the images from the hubble site parsing the html
 def loadImages():
-    # Change what url to open to change types of pictures (ex. "HUBBLE_ALL", "HUBBLE_STARS")
     r = urllib2.urlopen(HUBBLE_CAT_TO_LOAD).read()
     res = re.compile("pr(\d\d\d\d)0(\d\d)(\w)")
     img_keys = re.findall(res, r)
