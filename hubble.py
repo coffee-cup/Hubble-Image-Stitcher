@@ -20,7 +20,8 @@ HUBBLE_STARS = "http://hubblesite.org/gallery/album/star/npp/all/"
 
 # SETTINGS TO CHANGE
 
-# Change what url to open to change types of pictures (ex. "HUBBLE_ALL", "HUBBLE_STARS")
+# Change what url to open to change types of pictures
+#(ex. "HUBBLE_ALL", "HUBBLE_STARS")
 HUBBLE_CAT_TO_LOAD = HUBBLE_NEBULA
 # The size (in pixels) each separate image will be
 IMG_SIZE = 300
